@@ -22,6 +22,8 @@ struct BaseView: View {
         TabView(selection: $baseData.currentTab){
             
             Text("Home")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.black.opacity(0.04))
                 .tag(Tab.Home)
             
             Text("Heart")
@@ -39,9 +41,33 @@ struct BaseView: View {
             HStack(spacing: 0){
                 TabButton(Tab: .Home)
                 TabButton(Tab: .Heart)
+                
+                Button {
+                } label: {
+                    Image("cart")
+                        .resizable()
+                        .renderingMode(.template)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 26, height: 26)
+                        .foregroundColor(.white)
+                        .offset(x: -1)
+                        .padding(18)
+                        .background(Color("DarkBlue"))
+                        .clipShape(Circle())
+                    
+                        .shadow(color: Color.black.opacity(0.04), radius: 5, x: 5, y: 5)
+                        .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
+                    
+                }
+                .offset(y: -32)
+                
                 TabButton(Tab: .ClipBoard)
                 TabButton(Tab: .Person)
-            } ,alignment: .bottom
+            } .background(Color.white)
+            .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
+            
+            ,alignment: .bottom
+            
         )
     }
     
