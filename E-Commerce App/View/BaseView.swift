@@ -63,9 +63,12 @@ struct BaseView: View {
                 
                 TabButton(Tab: .ClipBoard)
                 TabButton(Tab: .Person)
-            } .background(Color.white)
-            .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
-            
+            } .background(
+                Color.white
+                    .clipShape(CustomCurveShape())
+                    .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
+                    .ignoresSafeArea(.container, edges: .bottom)
+            )
             ,alignment: .bottom
             
         )
