@@ -13,6 +13,8 @@ class BaseViewModel: ObservableObject {
     
     @Published var currentTab: Tab = .Home
     
+    @Published var homeTab = "Sneakers"
+    
 }
 
 //MARK: - Enum Case for Tab
