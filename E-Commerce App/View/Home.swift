@@ -92,6 +92,12 @@ struct Home: View {
                     
                     ForEach(products) { product in
                         CardView(product: product)
+                            .onTapGesture {
+                                withAnimation {
+                                    baseData.currentProduct = product
+                                    baseData.showDetail = true
+                                }
+                            }
                     }
                 }
             }
@@ -101,6 +107,10 @@ struct Home: View {
             
             .padding(.bottom, 100)
         }
+        .overlay(
+            DetailView(animation: animation)
+                .environmentObject(baseData)
+        )
     }
     
     @ViewBuilder func CardView(product: Product) -> some View {
@@ -126,10 +136,11 @@ struct Home: View {
             Image(product.productImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .matchedGeometryEffect(id: product.productImage, in: animation)
                 .padding()
                 .rotationEffect(.init(degrees: -20))
                 .background(
-                
+                    
                     ZStack {
                         Circle()
                             .fill(product.productBG)

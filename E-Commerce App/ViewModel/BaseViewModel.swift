@@ -15,6 +15,11 @@ class BaseViewModel: ObservableObject {
     
     @Published var homeTab = "Sneakers"
     
+    //MARK: - Detail View Properties
+    
+    @Published var currentProduct: Product?
+    @Published var showDetail = false
+    
 }
 
 //MARK: - Tab Enum
