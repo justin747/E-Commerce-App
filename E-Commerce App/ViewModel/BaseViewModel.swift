@@ -17,7 +17,7 @@ class BaseViewModel: ObservableObject {
     
 }
 
-//MARK: - Enum Case for Tab
+//MARK: - Tab Enum
 
 enum Tab: String {
 case Home = "home"

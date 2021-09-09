@@ -157,6 +157,10 @@ struct Home: View {
                         .font(.system(size: 9.5))
                         .foregroundColor(product.productRating >= index ? .yellow : Color.gray.opacity(0.6))
                 }
+                
+                Text("(\(product.productRating).0)")
+                    .font(.caption.bold())
+                    .foregroundColor(.gray)
             }
         }
         .padding()
