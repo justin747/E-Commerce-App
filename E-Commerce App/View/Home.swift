@@ -76,8 +76,22 @@ struct Home: View {
                         SegmentButton(image: "watch", title: "Watch")
 
                         SegmentButton(image: "backpack", title: "Backpack")
-
                     }
+                    .padding(.vertical)
+                }
+                
+                //MARK: - Product View
+                
+                let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
+                
+                //MARK: - Grid View
+                
+                LazyVGrid(columns: columns, spacing: 18) {
+                    
+                    //MARK: - Products
+                    
+                    
+                    
                 }
             }
             .padding()
