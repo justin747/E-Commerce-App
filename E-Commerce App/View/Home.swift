@@ -67,7 +67,7 @@ struct Home: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     
-                    HStack(spacing: 10) {
+                    HStack(spacing: 18) {
             
                         //MARK: - Segment Button
                         
