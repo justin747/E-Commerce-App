@@ -59,7 +59,7 @@ struct DetailView: View {
                     .frame(width: 250, height: 250)
                     .rotationEffect(.init(degrees: -20))
                     .background(
-                    
+                        
                         ZStack {
                             Circle()
                                 .fill(product.productBG)
@@ -71,6 +71,7 @@ struct DetailView: View {
                         }
                         
                     )
+                    .frame(height: getScreenBounds().height / 3)
                 
             }
             .padding(.vertical)
@@ -84,5 +85,13 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+//MARK: - Extend View for Screen Bounds
+
+extension View {
+    func getScreenBounds() -> CGRect {
+        return UIScreen.main.bounds
     }
 }
