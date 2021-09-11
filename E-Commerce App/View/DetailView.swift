@@ -114,7 +114,7 @@ struct DetailView: View {
                         } label: {
                             Text(size)
                                 .font(.callout)
-                                .foregroundColor(.black)
+                                .foregroundColor(.gray)
                                 .padding(.vertical, 8)
                                 .padding(.horizontal)
                                 .background(
