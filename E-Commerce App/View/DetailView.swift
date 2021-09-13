@@ -120,7 +120,7 @@ struct DetailView: View {
                                 .background(
                                 
                                     RoundedRectangle(cornerRadius: 8)
-                                        .fill(Color.gray)
+                                        .fill(Color.green)
                                         .opacity(self.size == size ? 0.3 : 0)
                                     
                                     
