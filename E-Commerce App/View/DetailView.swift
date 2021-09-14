@@ -105,26 +105,25 @@ struct DetailView: View {
                             .font(.caption.bold())
                             .foregroundColor(.gray)
                             .padding(.trailing)
-                    }
-                    
-                    ForEach(["US 6", "US 7", "US 8", "US 9"], id: \.self) { size in
                         
-                        Button {
-                            self.size = size
-                        } label: {
-                            Text(size)
-                                .font(.callout)
-                                .foregroundColor(.teal)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal)
-                                .background(
-                                
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .fill(Color.green)
-                                        .opacity(self.size == size ? 0.3 : 0)
-                                    
-                                    
-                                )
+                        
+                        ForEach(["US 6", "US 7", "US 8", "US 9"], id: \.self) { size in
+                            
+                            Button {
+                                self.size = size
+                            } label: {
+                                Text(size)
+                                    .font(.callout)
+                                    .foregroundColor(.teal)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal)
+                                    .background(
+                                        
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .fill(Color.green)
+                                            .opacity(self.size == size ? 0.3 : 0)
+                                    )
+                            }
                         }
                     }
                 }
