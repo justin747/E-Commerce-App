@@ -126,6 +126,60 @@ struct DetailView: View {
                             }
                         }
                     }
+                    .padding(.vertical)
+                    
+                    //MARK: - Color
+                    
+                    HStack(spacing: 15) {
+                        
+                        let colors: [Color] = [.red, .green, .blue, .black, .teal, .gray]
+                        Text("Available Colors: ")
+                            .font(.caption.bold())
+                            .foregroundColor(.gray)
+                        
+                        
+                        ForEach(colors, id: \.self) { color in
+                            
+                            Button {
+                                self.shoeColor = color
+                            } label: {
+                                Circle()
+                                    .fill(color.opacity(0.5))
+                                    .frame(width: 25, height: 25)
+                                    .overlay(
+                                    
+                                        Circle()
+                                            .stroke(Color("DarkBlue"), lineWidth: 1.5)
+                                            .opacity(shoeColor == color ? 0.2 : 1)
+                                            .padding(-4)
+                                    
+                                    )
+                            }
+                        }
+                    }
+                    .padding(.vertical)
+                    
+                    Button {
+                        
+                    } label: {
+                        
+                        HStack(spacing: 15) {
+                            Image("cart")
+                                .resizable()
+                                .renderingMode(.template)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                            
+                            Text("Add To Cart")
+                                .fontWeight(.bold)
+                        }
+                        .foregroundColor(Color("DarkBlue"))
+                        .padding(.vertical, 15)
+                        .frame(maxWidth: .infinity)
+                        .background(Color("DarkBlue") .opacity(0.06))
+                        .clipShape(Capsule())
+                    }
+                    .padding(.top)
                 }
                 .padding(.top)
                 .padding()
